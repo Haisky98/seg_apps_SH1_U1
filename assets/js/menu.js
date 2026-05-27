@@ -1,45 +1,23 @@
-
-//********MENÚ*********//
 $(document).ready(function(){
-	$("#pantalla_1").click(function(e){
-  		$("#principal").fadeIn('400');
-		$("#principal").load('_system/pantalla_1.php',function(){			
-		});
-	});
 
-	$("#pantalla_2").click(function(e){
-  		$("#principal").fadeIn('400');
-		$("#principal").load('_system/pantalla_2.php',function(){			
-		});
-	});
+    function cargarPagina(url) {
+        $("#principal").fadeOut(400, function() {
+            $(this).load(url, function() {
+                $(this).fadeIn(400);
+            });
+        });
+    }
+    
+    $(document).on('click', '#index, #btn_cancelar_registro', function(){
+        cargarPagina('system/principal.php');
+    });
 
-	$("#pantalla_3").click(function(e){
-  		$("#principal").fadeIn('400');
-		$("#principal").load('_system/pantalla_3.php',function(){			
-		});
-	});
-	
+    $(document).on('click', '#registro, #boton_registro', function(){
+        cargarPagina('system/registro.php');
+    });
+
+    $(document).on('click', '#lista_usuarios, #boton_lista', function(){
+        cargarPagina('system/lista_usuarios.php');
+    });
+    
 });
-
-/*-------------------------C E R R A R     S E S I O N------------------------*/
-	$("#cerrar_sesion").click(function() {
-		$.ajax({
-			url: '_actions/cerrar_sesion.php',
-			type: 'POST',
-			dataType: 'html',
-			data: {sesion: 'close'}
-		  })	
-		.done(function(response) {	
-			window.location.href = "./login.php";
-		})
-		.fail(function(xhr, desc, err) {
-                  console.log(xhr);
-                  console.log("Details: " + desc + "\nError:" + err);
-		})
-		.always(function() {
-			console.log("complete");
-		});	
-		
-	});
-
-/*--------------------------------------------*/
