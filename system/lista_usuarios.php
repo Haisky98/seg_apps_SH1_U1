@@ -19,32 +19,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal_editar_usuario" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <form id="form_editar_usuario">
-                <div class="modal-header">
-                    <h5 class="modal-title">Editar Usuario</h5>
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" name="id" id="edit_id">
-                    <div class="mb-3">
-                        <label>Nombre de Usuario</label>
-                        <input type="text" name="username" id="edit_username" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label>Nueva Contraseña (Dejar vacío para no cambiarla)</label>
-                        <input type="password" name="password" class="form-control" placeholder="Escriba su nueva Contraseña">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+ 
 
 
 <script>

@@ -21,8 +21,8 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./sql:/docker-entrypoint-initdb.d
       - .:/var/www/html
+      - ./db:/docker-entrypoint-initdb.d/
     depends_on:
       - db
 
